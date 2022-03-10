@@ -1,22 +1,36 @@
 ## CoreJava_learning
 
-You can use the [editor on GitHub](https://github.com/CharlesTiptoeing/CoreJava_learning/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 3rd March
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
+Core Java Page 86
 
-# Header 1
-## Header 2
-### Header 3
+# Traverses a string
 
-- Bulleted
-- List
+int cp = sentence.codePointAt(i);
+    if (Character.isSupplementaryCodePoint(cp)) i += 2;
+    else i++;
+    
+## Move backforwards
+
+i--;
+    if (Character.isSurrogate(sentence.charAt(i))) i--;
+    int cp = sentence.codePointAt(i);
+    
+### Easier way
+
+int[] codePoints = str.codePoints().toArray();
+
+>use **codePoints** to yield a stream of **int** values, turn the stream into array
+
+### Turn an array of code ponits into arrays
+
+String str = new String(codePoints, 0, codePoints.length);
+
+
 
 1. Numbered
 2. List
